@@ -1,11 +1,11 @@
 
 %%%% Path to folder
 
-Path='\\hallingskeid.uib.no\hug043\Documents\MonteCarlo\LISST_VSF\LISST_correction\Neural\NeuralNetwork\';
+Path='Path to folder containing model';
 
 %%%%%%%% VSF to be corrected
 
-VSF = readmatrix('\\hallingskeid.uib.no\hug043\Documents\MonteCarlo\LISST_VSF\LISST_correction\Neural\Koestner\DilCor\Lagoon_pro.txt');
+VSF = readmatrix('Path and filename of VSF to be corrected');
 numberOfSamples=length(VSF(1,:));
 %%%%LISST-VSF angles
 
