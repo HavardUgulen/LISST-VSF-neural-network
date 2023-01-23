@@ -111,7 +111,7 @@ plt.yscale('log')
 
 x_label.set_fontsize(22)
 y_label.set_fontsize(22)
-ax.set_ylim(10**(-3), 10**5)
+ax.set_ylim(10**(-5), 10**6)
 ax.set_frame_on(True)
 
 plt.show()
