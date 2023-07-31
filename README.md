@@ -18,7 +18,13 @@ Input: b $\approx$ [0.05, 0.17, 0.57, 2.03, 9.9, 93.2, 336, 1129, 3730].
 
 Output: b $\approx$ [0.05, 0.17, 0.55, 1.8, 6.0, 20.0, 30.0, 40.0, 50.0]
 
+This example dataset is included in the training data, hence the accuaracy. 
+
 #### Input data
 
-The measured VSFs used as input data to the model should be processed in the following way to obtain VSF input data that is similar to the training data.
+In order for the model to produce reliable results, the measured VSFs used as input data to the model should be processed following the steps described in [1]. 
 
+
+
+
+1. Lianbo Hu, Xiaodong Zhang, Yuanheng Xiong, and Ming-Xia He, "Calibration of the LISST-VSF to derive the volume scattering functions in clear waters," Opt. Express 27, A1188-A1206 (2019)
