@@ -1,12 +1,13 @@
 
-%%%% Path to folder
+%%%% Path to folder containing model
 
-Path='Path to folder containing model';
+Path='Insert path';
 
 %%%%%%%% VSF to be corrected
 
-VSF = readmatrix('Path and filename of VSF to be corrected');
+VSF = readmatrix('Path and filename of VSF to be corrected',  'ConsecutiveDelimitersRule', 'join');
 numberOfSamples=length(VSF(1,:));
+
 %%%%LISST-VSF angles
 
 Angles=readmatrix(sprintf('%sAngles.txt',Path));
@@ -99,6 +100,8 @@ for i=1:numberOfSamples
 end
 
 %%%% Plot
+
+VSF=VSF(1:168,:);
 
 figure();
     hold on;

@@ -16,7 +16,7 @@ layers=4
 
 #######   Path to directory containing model
 
-Filepath = 'Insert path do directory'
+Filepath = 'Insert path'
 
 #######   import transformation values   ########
 
@@ -50,8 +50,8 @@ W=[]
 B=[]
 
 for i in range (layers):
-    W.append(np.loadtxt('Weights_'+str(i+1)+'.txt'))
-    B.append(np.loadtxt('Bias_'+str(i+1)+'.txt'))
+    W.append(np.loadtxt(Filepath + 'Weights_'+str(i+1)+'.txt'))
+    B.append(np.loadtxt(Filepath + 'Bias_'+str(i+1)+'.txt'))
 
 ########   Neural network correction funtion   ##########
 
@@ -98,7 +98,7 @@ prediction=prediction.transpose()
 ############# Make Figure ##############
 
 fig, ax = plt.subplots()
-ax.plot(angles, VSF_matrix[:,:], 'r', label='A')
+ax.plot(angles, VSF_matrix[0:168,:], 'r', label='A')
 ax.plot(angles, prediction[:,:], 'b', label='B')
 
 y_label=ax.set_ylabel('VSF ['r'$m^{-1}sr^{-1}$]')
@@ -127,13 +127,15 @@ VSF_all_err=np.zeros([nrOfSamples,2])
 
 for sample in range(0,nrOfSamples):
 
-    b_all[sample,0]=(integrate.trapz(np.multiply(VSF_matrix[:,sample],2*pi*np.sin(ang_rad)), ang_rad))
+    b_all[sample,0]=(integrate.trapz(np.multiply(VSF_matrix[0:168,sample],2*pi*np.sin(ang_rad)), ang_rad))
     b_all[sample,1]=(integrate.trapz(np.multiply(prediction[:,sample],2*pi*np.sin(ang_rad)), ang_rad))
 
-    bb_all[sample,0]=(integrate.trapz(np.multiply(VSF_matrix[107::,sample],2*pi*np.sin(ang_bb)), ang_bb))
+    bb_all[sample,0]=(integrate.trapz(np.multiply(VSF_matrix[107:168,sample],2*pi*np.sin(ang_bb)), ang_bb))
     bb_all[sample,1]=(integrate.trapz(np.multiply(prediction[107:,sample],2*pi*np.sin(ang_bb)), ang_bb))
 
+##############  Prints scattering and backscattering coefficients  #############
 
-
-print(str(b_all))
+np.set_printoptions(suppress=True, precision=2)    #### Sets number of displayed decimals
+print(b_all)
+np.set_printoptions(suppress=True, precision=4)
 print(str(bb_all))
