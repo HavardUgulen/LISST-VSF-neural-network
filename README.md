@@ -1,5 +1,7 @@
 ## LISST-VSF-neural-network
 
+If you have any problems, please contact me at haavardugulen@gmail.com
+
 #### General information
 
 This neural network (NN) is developed to correct LISST-VSF measurements for multiple scattering errors. The input to the NN is the measured VSF and the output is the corrected VSF. 
@@ -10,7 +12,8 @@ The NN model is found in the folder "NeuralNetwork". It contains the weights, bi
 
 You can correct multiple VSFs simultaneously, where the input VSFs should be arranged in a matrix of the form 168xNrOfSamples (see example file "VSF_example"). The NN only uses the first 158 measurement points (0.09-140 degrees) as inputs, but loading the VSF for all 168  measurement points (0.09-150 degrees) enables plotting of the input VSFs and calculation of the scattering coefficients. 
 
-Further information about the neural network is provided in [1]
+Further information about the neural network is provided in [1]. 
+
 
 #### Example 
 
@@ -28,6 +31,6 @@ In order for the model to produce reliable results, the measured VSFs used as in
 
 
 
-1. 
+1. Håvard S. Ugulen, Daniel Koestner, Håkon Sandven, Børge Hamre, Arne S. Kristoffersen, and Camilla Saetre, "Neural network approach for correction of multiple scattering errors in the LISST-VSF instrument," Opt. Express 31, 32737-32751 (2023)
 
 2. Lianbo Hu, Xiaodong Zhang, Yuanheng Xiong, and Ming-Xia He, "Calibration of the LISST-VSF to derive the volume scattering functions in clear waters," Opt. Express 27, A1188-A1206 (2019)
