@@ -31,7 +31,7 @@ angles=np.loadtxt(Filepath + "/Angles.txt")
 
 #####  Path and file containg input VSF     #########
     
-VSF_matrix=np.loadtxt(Filepath + "VSF_example.txt")
+VSF_matrix=np.loadtxt(Filepath + "VSF_example.txt", ndmin=2)
 input_matrix=VSF_matrix[0:158,:]   ##### Only want input VSF up to 140 degrees
 
 
